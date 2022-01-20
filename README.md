@@ -7,7 +7,23 @@ This repository first sets up wifi on a Raspberry Pi 4b (with 4gb ram) and then 
 
 
 ## Setup GitLab server + GitLab runner CI
+Install Anaconda (if you already did this/have `conda`, skip it) (open terminal and run):
 ```
+sudo apt update
+yes | sudo apt install curl
+yes | sudo apt install wget
+wget -O ~/Downloads/anaconda.sh https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh
+bash ~/Downloads/anaconda.sh -b -p $HOME/anaconda3
+reboot -n
+```
+Install this repository (which uses Anaconda):
+```
+sudo apt update
+yes | sudo apt install curl
+yes | sudo apt install wget
+yes | sudo apt install git
+yes | git clone https://github.com/Simple-Setup/Self-host-GitLab-Server-and-Runner-CI.git
+cd Self-host-GitLab-Server-and-Runner-CI
 chmod +x *.sh
 ./install_gitlab.sh -s -r
 ```
